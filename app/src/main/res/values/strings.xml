@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MeSo</string>
+    <string name="welcome">Welcome to MeSo</string>
+    <string name="button_start">start</string>
+
+    <string name="welcome_description">MeSo is an application that pays attention to your mental health.During pandemic, there are many things that interfere with your mental health that\'s why MeSo come to help with those problems.</string>
+</resources>
