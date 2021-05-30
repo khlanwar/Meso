@@ -16,4 +16,9 @@
     <string name="already_have_account">Already have an account ?</string>
     <string name="sign_in"> Sign in</string>
     <string name="name_not_valid">Name cannot be empty</string>
+    <string name="title_login">Welcome Back !</string>
+    <string name="login_email">Enter your email</string>
+    <string name="login">Login</string>
+    <string name="dont_have_account">Don\'t have an account ?</string>
+    <string name="sign_up">Sign up</string>
 </resources>
