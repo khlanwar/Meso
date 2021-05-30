@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundGreen"
-    tools:context=".RegistrationActivity">
+    tools:context=".RegisterActivity">
 
     <ImageView
-        android:layout_width="410dp"
-        android:layout_height="410dp"
+        android:layout_width="305dp"
+        android:layout_height="305dp"
         android:src="@drawable/ru"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,8 +18,8 @@
         android:id="@+id/tv_title_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="Don't have an account yet?"
+        android:layout_marginTop="146dp"
+        android:text="@string/title_registration"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Let's create an account"
+        android:text="@string/description_title"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_title_register"

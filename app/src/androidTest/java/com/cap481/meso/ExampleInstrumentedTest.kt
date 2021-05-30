@@ -1,4 +1,4 @@
-package com.example.meso
+package com.cap481.meso
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

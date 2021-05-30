@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundGreen"
-    tools:context=".SplashScreenActivity">
+    tools:context=".WelcomeActivity">
 
     <ImageView
-        android:layout_width="410dp"
-        android:layout_height="410dp"
+        android:layout_width="305dp"
+        android:layout_height="305dp"
         android:src="@drawable/ru"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,7 +18,7 @@
         android:id="@+id/iv_welcome"
         android:layout_width="305dp"
         android:layout_height="305dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="112dp"
         android:src="@drawable/center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +28,7 @@
         android:id="@+id/tv_title_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/quattrocento_bold"
         android:text="@string/welcome"
         android:textColor="@color/black"
@@ -38,15 +39,17 @@
 
     <TextView
         android:id="@+id/tv_description_welcome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/abeezee_italic"
         android:gravity="center"
         android:text="@string/welcome_description"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_welcome" />
@@ -56,7 +59,7 @@
         android:layout_width="305dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:background="@color/colorGreen"
         android:fontFamily="@font/crimsontext_italic"
         android:text="@string/button_start"

@@ -1,11 +1,11 @@
-package com.example.meso
+package com.cap481.meso
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class RegistrationActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration)
+        setContentView(R.layout.activity_main)
     }
 }

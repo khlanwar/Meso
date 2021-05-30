@@ -1,4 +1,4 @@
-package com.example.meso
+package com.cap481.meso
 
 import org.junit.Test
 

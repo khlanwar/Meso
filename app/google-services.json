@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "721164123407",
+    "project_id": "meso-fbec0",
+    "storage_bucket": "meso-fbec0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721164123407:android:62a4137e0c539c1c1b927a",
+        "android_client_info": {
+          "package_name": "com.cap481.meso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721164123407-1hnd4d4mbq3vviieubis60nu4aqbks89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcBaPIFrGCdN_Ajleji4G4MYcngjOn8ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721164123407-1hnd4d4mbq3vviieubis60nu4aqbks89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

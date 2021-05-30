@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.meso">
+    package="com.cap481.meso">
 
     <application
         android:allowBackup="true"
@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Meso">
-        <activity android:name=".RegistrationActivity"></activity>
+
+        <activity android:name="com.cap481.meso.MainActivity" />
+        <activity android:name="com.cap481.meso.RegisterActivity"/>
+        <activity android:name="com.cap481.meso.WelcomeActivity"/>
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="com.cap481.meso.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".WelcomeActivity" />
+
     </application>
 
 </manifest>
