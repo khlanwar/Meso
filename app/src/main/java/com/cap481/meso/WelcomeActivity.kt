@@ -3,7 +3,7 @@ package com.cap481.meso
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.meso.databinding.ActivityWelcomeBinding
+import com.cap481.meso.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
 

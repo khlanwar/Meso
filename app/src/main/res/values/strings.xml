@@ -5,4 +5,15 @@
     <string name="welcome_description">MeSo is an application that pays attention to your mental health.During pandemic, there are many things that interfere with your mental health that\'s why MeSo come to help with those problems.</string>
     <string name="title_registration">Don\'t have an account yet?</string>
     <string name="description_title">Let\'s create an account</string>
+    <string name="register_email">Enter your email</string>
+    <string name="register_password">Enter password</string>
+    <string name="register_confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="email_not_valid">Invalid email format!</string>
+    <string name="password_not_valid">Password less than 6 characters!</string>
+    <string name="password_not_same">Passwords are not the same!</string>
+    <string name="register_name">Enter your full name</string>
+    <string name="already_have_account">Already have an account ?</string>
+    <string name="sign_in"> Sign in</string>
+    <string name="name_not_valid">Name cannot be empty</string>
 </resources>
