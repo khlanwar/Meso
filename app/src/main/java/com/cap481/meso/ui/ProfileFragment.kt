@@ -119,5 +119,4 @@ class ProfileFragment : Fragment() {
     companion object{
         const val REQUEST_CAMERA = 100
     }
-
 }
