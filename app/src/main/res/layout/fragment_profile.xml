@@ -7,11 +7,26 @@
     android:background="@color/color_background_green"
     tools:context=".ui.ProfileFragment">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="305dp"
+        android:layout_height="305dp"
+        android:src="@drawable/ru"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="305dp"
+        android:layout_height="305dp"
+        android:src="@drawable/rd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ivProfile"
+        android:id="@+id/iv_profile"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:src="@drawable/ic_photo_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +42,7 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfile">
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -35,7 +50,7 @@
             android:layout_marginVertical="16dp">
 
             <EditText
-                android:id="@+id/etName"
+                android:id="@+id/et_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -43,32 +58,34 @@
                 android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
+                android:text="@string/profile_name"
+                android:hint="@string/profile_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/et_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
+                android:enabled="false"
                 android:inputType="textEmailAddress"
-                app:layout_constraintEnd_toEndOf="@+id/etName"
-                app:layout_constraintStart_toStartOf="@+id/etName"
-                app:layout_constraintTop_toBottomOf="@+id/etName" />
+                app:layout_constraintEnd_toEndOf="@+id/et_name"
+                app:layout_constraintStart_toStartOf="@+id/et_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
             <Button
-                android:id="@+id/btnUpdate"
+                android:id="@+id/btn_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Save"
                 android:textColor="#FFFFFF"
-                app:layout_constraintEnd_toEndOf="@+id/etEmail"
-                app:layout_constraintStart_toStartOf="@+id/etEmail"
-                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+                app:layout_constraintEnd_toEndOf="@+id/et_email"
+                app:layout_constraintStart_toStartOf="@+id/et_email"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

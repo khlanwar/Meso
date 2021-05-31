@@ -6,6 +6,7 @@
     <string name="title_registration">Don\'t have an account yet?</string>
     <string name="description_title">Let\'s create an account</string>
     <string name="register_email">Enter your email</string>
+    <string name="profile_name">Enter your name</string>
     <string name="register_password">Enter password</string>
     <string name="register_confirm_password">Confirm Password</string>
     <string name="register">Register</string>
