@@ -6,10 +6,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.cap481.meso.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
 
     private lateinit var binding: ActivityLoginBinding
     private var emailValid = false
@@ -21,14 +25,18 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+        auth = FirebaseAuth.getInstance()
+
         binding.tvNotHaveAccount.setOnClickListener{
             intent = Intent(this,RegisterActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnLogin.setOnClickListener{
-            intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
+            val email = binding.edEmail.text.toString().trim()
+            val password = binding.edConfirmPassword.text.toString().trim()
+
+            loginUser(email, password)
         }
 
         validateButton()
@@ -58,6 +66,20 @@ class LoginActivity : AppCompatActivity() {
         })
 
 
+    }
+
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email,password)
+            .addOnCompleteListener(this){
+                if(it.isSuccessful){
+                    Intent(this,HomeActivity::class.java).also{intent ->
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
+                }else{
+                    Toast.makeText(this,it.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     fun validateEmail() {

@@ -6,14 +6,16 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.cap481.meso.databinding.ActivityRegisterBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
+    private lateinit var auth: FirebaseAuth
 
-    private var nameValid = false
     private var emailValid = false
     private var passwordValid = false
     private var passwordConfirmationValid = false
@@ -24,24 +26,20 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+        auth = FirebaseAuth.getInstance()
+
+        binding.btnRegister.setOnClickListener{
+            val email = binding.edEmail.text.toString().trim()
+            val password = binding.edPassword.text.toString().trim()
+            registerUser(email, password)
+        }
+
         binding.tvHaveAccount.setOnClickListener{
             intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
 
         validateButton()
-
-        binding.edName.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                validateName()
-            }
-        })
 
         binding.edEmail.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -80,16 +78,18 @@ class RegisterActivity : AppCompatActivity() {
         })
     }
 
-    fun validateName() {
-        val input = binding.edName.text.toString()
-        if (input == "") {
-            nameValid = false
-            showNameExistAlert(true)
-        } else {
-            nameValid = true
-            showNameExistAlert(false)
-        }
-        validateButton()
+    private fun registerUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this){
+                if (it.isSuccessful){
+                    Intent(this,HomeActivity::class.java).also {intent ->
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    }
+                }else{
+                    Toast.makeText(this,it.exception?.message,Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     fun validateEmail() {
@@ -129,17 +129,13 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun validateButton() {
-        if (nameValid && emailValid && passwordValid && passwordConfirmationValid) {
+        if (emailValid && passwordValid && passwordConfirmationValid) {
             binding.btnRegister.isEnabled = true
             binding.btnRegister.setBackgroundColor(ContextCompat.getColor(this, R.color.color_background_green))
         } else {
             binding.btnRegister.isEnabled = false
             binding.btnRegister.setBackgroundColor(ContextCompat.getColor(this, android.R.color.darker_gray))
         }
-    }
-
-    private fun showNameExistAlert(isNotValid: Boolean) {
-        binding.edName.error = if (isNotValid) getString(R.string.name_not_valid) else null
     }
 
     private fun showEmailExistAlert(isNotValid: Boolean) {

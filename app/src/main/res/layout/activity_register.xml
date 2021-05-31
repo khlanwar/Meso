@@ -25,7 +25,7 @@
         android:id="@+id/tv_title_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="152dp"
         android:text="@string/title_registration"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -38,7 +38,7 @@
         android:id="@+id/tv_description_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="24dp"
         android:text="@string/description_title"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -46,23 +46,6 @@
         app:layout_constraintStart_toStartOf="@+id/tv_title_register"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_register" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
-        android:hint="@string/register_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description_register">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
@@ -70,12 +53,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
         android:hint="@string/register_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_name">
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_register">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ed_email"
             android:layout_width="match_parent"
@@ -128,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:background="@android:color/background_dark"
         android:enabled="false"
         android:text="@string/register"
