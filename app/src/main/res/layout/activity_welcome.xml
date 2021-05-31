@@ -62,10 +62,10 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
         android:background="@color/green"
-        android:fontFamily="@font/crimsontext_italic"
+        android:fontFamily="@font/quattrocento_regular"
         android:text="@string/button_start"
         android:textColor="@color/color_background_green"
-        android:textSize="26sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_description_welcome" />

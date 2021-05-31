@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.cap481.meso.databinding.ActivityWelcomeBinding
+import com.cap481.meso.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class WelcomeActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class WelcomeActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         binding.btnStart.setOnClickListener{
-            intent = Intent(this,RegisterActivity::class.java)
+            intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
     }
@@ -28,7 +29,7 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(auth.currentUser != null){
-            Intent(this,HomeActivity::class.java).also{intent ->
+            Intent(this, HomeActivity::class.java).also{ intent ->
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }

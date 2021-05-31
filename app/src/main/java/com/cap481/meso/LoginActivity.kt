@@ -9,6 +9,7 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.cap481.meso.databinding.ActivityLoginBinding
+import com.cap481.meso.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -72,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){
                 if(it.isSuccessful){
-                    Intent(this,HomeActivity::class.java).also{intent ->
+                    Intent(this, HomeActivity::class.java).also{ intent ->
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     }
