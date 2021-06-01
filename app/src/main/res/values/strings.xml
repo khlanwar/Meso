@@ -27,4 +27,10 @@
     <string name="diagnose">Diagnose</string>
     <string name="profile">Profile</string>
     <string name="start_diagnose">Start Diagnose</string>
+    <string name="image_home">Image Home</string>
+    <string name="image_mental_illness">Image Mental Illness</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="save_profile">Save</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="search_mental_illness">Search</string>
 </resources>

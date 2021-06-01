@@ -1,4 +1,4 @@
-package com.cap481.meso.ui
+package com.cap481.meso.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

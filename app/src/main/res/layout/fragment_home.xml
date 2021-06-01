@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_background_green"
     tools:context=".ui.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/iv_image_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="240dp"
+        android:contentDescription="@string/image_home"
+        android:src="@drawable/home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textCursorDrawable="@null"
+        app:iconifiedByDefault="false"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/iv_image_home"
+        app:layout_constraintStart_toStartOf="@+id/iv_image_home"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image_home"
+        app:queryBackground="@null"
+        app:queryHint="@string/search_mental_illness"
+        app:showDividers="end" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mental_illness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:listitem="@layout/item_list_mental_illness" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

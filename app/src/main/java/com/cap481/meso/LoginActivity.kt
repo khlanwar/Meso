@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.cap481.meso.databinding.ActivityLoginBinding
@@ -33,9 +34,16 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.tvForgetPassword.setOnClickListener {
+            intent = Intent(this,ResetPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogin.setOnClickListener{
             val email = binding.edEmail.text.toString().trim()
             val password = binding.edConfirmPassword.text.toString().trim()
+
+            binding.progressBar.visibility = View.VISIBLE
 
             loginUser(email, password)
         }
@@ -73,11 +81,13 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener(this){
                 if(it.isSuccessful){
+                    binding.progressBar.visibility = View.INVISIBLE
                     Intent(this, HomeActivity::class.java).also{ intent ->
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     }
                 }else{
+                    binding.progressBar.visibility = View.INVISIBLE
                     Toast.makeText(this,it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }

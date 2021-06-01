@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.cap481.meso.databinding.FragmentDiagnoseBinding
+import com.cap481.meso.detail.DiagnoseDetailActivity
 
 class DiagnoseFragment : Fragment() {
 
@@ -21,7 +22,7 @@ class DiagnoseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnStartDiagnose.setOnClickListener{
-            val intent = Intent(activity,DiagnoseDetailActivity::class.java)
+            val intent = Intent(activity, DiagnoseDetailActivity::class.java)
             startActivity(intent)
         }
     }

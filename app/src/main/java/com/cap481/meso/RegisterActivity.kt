@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.cap481.meso.databinding.ActivityRegisterBinding
@@ -32,6 +33,9 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener{
             val email = binding.edEmail.text.toString().trim()
             val password = binding.edPassword.text.toString().trim()
+
+            binding.progressBar.visibility = View.VISIBLE
+
             registerUser(email, password)
         }
 
@@ -83,11 +87,13 @@ class RegisterActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this){
                 if (it.isSuccessful){
+                    binding.progressBar.visibility = View.INVISIBLE
                     Intent(this, HomeActivity::class.java).also { intent ->
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
                     }
                 }else{
+                    binding.progressBar.visibility = View.INVISIBLE
                     Toast.makeText(this,it.exception?.message,Toast.LENGTH_SHORT).show()
                 }
             }
