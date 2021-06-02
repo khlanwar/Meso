@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "721164123407",
-    "project_id": "meso-fbec0",
-    "storage_bucket": "meso-fbec0.appspot.com"
+    "project_number": "728597311808",
+    "project_id": "b21-cap0481",
+    "storage_bucket": "b21-cap0481.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:721164123407:android:62a4137e0c539c1c1b927a",
+        "mobilesdk_app_id": "1:728597311808:android:2ec9c737bd7b377aeecaa5",
         "android_client_info": {
           "package_name": "com.cap481.meso"
         }
       },
       "oauth_client": [
         {
-          "client_id": "721164123407-1hnd4d4mbq3vviieubis60nu4aqbks89.apps.googleusercontent.com",
+          "client_id": "728597311808-vjqqkltf2rol2se1vokdan4gdnmm8i1l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCcBaPIFrGCdN_Ajleji4G4MYcngjOn8ss"
+          "current_key": "AIzaSyDMvk0BCx_Iwt_lGSgHgUDaS1Cc5c70ayw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "721164123407-1hnd4d4mbq3vviieubis60nu4aqbks89.apps.googleusercontent.com",
+              "client_id": "728597311808-vjqqkltf2rol2se1vokdan4gdnmm8i1l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

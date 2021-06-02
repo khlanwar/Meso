@@ -4,15 +4,276 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background_green"
     tools:context=".detail.DiagnoseDetailActivity">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coming Soon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="@string/title_diagnose"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/choose_your_age"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <Spinner
+        android:id="@+id/sp_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:entries="@array/age"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_age"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_age" />
+
+    <TextView
+        android:id="@+id/tv_title_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:text="@string/what_is_your_gender"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_age"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_age" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_gender"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_gender">
+
+        <RadioButton
+            android:id="@+id/rb_gender_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/rv_gender_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_title_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/choose_your_country"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/rg_gender"
+        app:layout_constraintTop_toBottomOf="@+id/rg_gender"/>
+
+    <Spinner
+        android:id="@+id/sp_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/country"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_country"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_country" />
+
+    <TextView
+        android:id="@+id/tv_title_states"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/choose_your_state"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_country"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_country"/>
+
+    <Spinner
+        android:id="@+id/sp_states"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:entries="@array/states"
+        app:layout_constraintStart_toEndOf="@+id/tv_title_states"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_states" />
+
+    <TextView
+        android:id="@+id/tv_title_mhi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/mhi_title"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_states"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_states" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_mental_health_interview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_mhi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_mhi">
+
+        <RadioButton
+            android:id="@+id/rb_mhi_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rv_mhi_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_title_phi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/phi_title"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rg_mental_health_interview"
+        app:layout_constraintTop_toBottomOf="@+id/rg_mental_health_interview" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_physical_health_interview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_phi"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_phi">
+
+        <RadioButton
+            android:id="@+id/rb_phi_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rv_phi_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_title_mvp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/mental_vs_physical"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rg_physical_health_interview"
+        app:layout_constraintTop_toBottomOf="@+id/rg_physical_health_interview" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_mvp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_mvp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_mvp">
+
+        <RadioButton
+            android:id="@+id/rb_mvp_dont_know"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_know"/>
+        <RadioButton
+            android:id="@+id/rb_mvp_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rv_mvp_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_title_obs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/quattrocento_bold"
+        android:textColor="@color/black"
+        android:text="@string/obs_consequence"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rg_mvp"
+        app:layout_constraintTop_toBottomOf="@+id/rg_mvp" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_obs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_obs"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_obs">
+
+        <RadioButton
+            android:id="@+id/rb_obs_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rv_obs_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_obs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

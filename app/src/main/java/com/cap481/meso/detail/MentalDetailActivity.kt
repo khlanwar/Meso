@@ -3,7 +3,6 @@ package com.cap481.meso.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.cap481.meso.databinding.ActivityMentalDetailBinding
 import com.cap481.meso.utils.DataDummy
 import com.cap481.meso.utils.MentalEntity
@@ -20,9 +19,7 @@ class MentalDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMentalDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        title = ""
+        supportActionBar?.hide()
 
         val extras = intent.extras
         if (extras != null) {
