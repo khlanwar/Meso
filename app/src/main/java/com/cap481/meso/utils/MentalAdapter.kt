@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cap481.meso.databinding.ItemListMentalIllnessBinding
 import com.cap481.meso.detail.DiagnoseDetailActivity
+import com.cap481.meso.detail.MentalDetailActivity
 import java.util.ArrayList
 
 class MentalAdapter : RecyclerView.Adapter<MentalAdapter.MentalViewHolder>() {
@@ -36,8 +37,8 @@ class MentalAdapter : RecyclerView.Adapter<MentalAdapter.MentalViewHolder>() {
             with(binding) {
                 tvItemTitle.text = mental.title
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DiagnoseDetailActivity::class.java)
-                    //intent.putExtra(DetailCourseActivity.EXTRA_COURSE, course.courseId)
+                    val intent = Intent(itemView.context, MentalDetailActivity::class.java)
+                    intent.putExtra(MentalDetailActivity.EXTRA_DATA, mental.mentalId)
                     itemView.context.startActivity(intent)
                 }
                 Glide.with(itemView.context)

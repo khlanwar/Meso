@@ -4,6 +4,8 @@ import java.util.ArrayList
 
 object DataDummy {
 
+    private val baseUrl = "https://picsum.photos/id/1/200/300"
+
     fun generateDummyMental(): List<MentalEntity> {
 
         val mentals = ArrayList<MentalEntity>()
