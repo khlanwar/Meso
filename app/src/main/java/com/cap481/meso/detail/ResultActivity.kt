@@ -1,8 +1,11 @@
 package com.cap481.meso.detail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.cap481.meso.databinding.ActivityResultBinding
+import com.cap481.meso.home.HomeActivity
 
 class ResultActivity : AppCompatActivity() {
 
@@ -19,8 +22,19 @@ class ResultActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         val extras = intent.extras
-        val result = extras?.getString(EXTRA_DATA)
+        if (extras != null) {
+            val result = extras.getBoolean(EXTRA_DATA)
+            if (result) {
+                binding.needConsultation.visibility = View.VISIBLE
+            }
+            else{
+                binding.noneedConsultation.visibility = View.VISIBLE
+            }
+        }
 
-        binding.result.text = result
+        binding.finish.setOnClickListener{
+            intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

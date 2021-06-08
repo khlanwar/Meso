@@ -18,15 +18,23 @@ class DiagnoseDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        val result = binding.rbMhiYes.text.toString().trim()
+        var result = true
 
         binding.btnSubmit.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
             Handler(mainLooper).postDelayed({
-                val intent = Intent(this,ResultActivity::class.java)
-                intent.putExtra(ResultActivity.EXTRA_DATA, result)
-                startActivity(intent)
-                finish()
+                if (binding.rbMhiYes.isChecked) {
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.putExtra(ResultActivity.EXTRA_DATA, result)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    result = false
+                    val intent = Intent(this, ResultActivity::class.java)
+                    intent.putExtra(ResultActivity.EXTRA_DATA, result)
+                    startActivity(intent)
+                    finish()
+                }
             }, delayTime)
         }
 

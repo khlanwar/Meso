@@ -84,7 +84,7 @@
         android:fontFamily="@font/quattrocento_bold"
         android:textColor="@color/black"
         android:text="@string/choose_your_country"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/rg_gender"
         app:layout_constraintTop_toBottomOf="@+id/rg_gender"/>
 
@@ -99,26 +99,6 @@
         app:layout_constraintStart_toEndOf="@+id/tv_title_country"
         app:layout_constraintTop_toTopOf="@+id/tv_title_country" />
 
-    <TextView
-        android:id="@+id/tv_title_states"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:fontFamily="@font/quattrocento_bold"
-        android:textColor="@color/black"
-        android:text="@string/choose_your_state"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_title_country"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_country"/>
-
-    <Spinner
-        android:id="@+id/sp_states"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:entries="@array/states"
-        app:layout_constraintStart_toEndOf="@+id/tv_title_states"
-        app:layout_constraintTop_toTopOf="@+id/tv_title_states" />
 
     <TextView
         android:id="@+id/tv_title_mhi"
@@ -130,8 +110,8 @@
         android:text="@string/mhi_title"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_title_states"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_states" />
+        app:layout_constraintStart_toStartOf="@+id/tv_title_country"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_country" />
 
 
     <RadioGroup
@@ -159,7 +139,7 @@
         android:id="@+id/tv_title_phi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/quattrocento_bold"
         android:textColor="@color/black"
         android:text="@string/phi_title"
@@ -194,7 +174,7 @@
         android:id="@+id/tv_title_mvp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/quattrocento_bold"
         android:textColor="@color/black"
         android:text="@string/mental_vs_physical"
@@ -234,7 +214,7 @@
         android:id="@+id/tv_title_obs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/quattrocento_bold"
         android:textColor="@color/black"
         android:text="@string/obs_consequence"

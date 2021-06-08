@@ -49,6 +49,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="submit">Submit</string>
+    <string name="finish">Finish</string>
 
     <string-array name="country">
         <item>Australia</item>
